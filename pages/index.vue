@@ -2,6 +2,7 @@
     <div class="container mx-auto p-8 bg-gray-900 text-white min-h-screen">
         <h1 class="text-3xl font-extrabold text-center mb-6">Paid PWA Component Generator</h1>
 
+        <Adsbygoogle ad-full-width-responsive="true" ad-slot="6833537473" />
         <!-- SEO-optimized Aside -->
         <aside class="mb-8 p-4 bg-gray-800 border-l-4 border-blue-500 rounded text-gray-200 shadow-md">
             <p>
@@ -38,6 +39,8 @@
 
         <!-- Input Form -->
         <form class="space-y-4 bg-gray-800 p-6 rounded shadow-md">
+
+            <Adsbygoogle />
             <div>
                 <label for="stripePublicKey" class="block font-medium text-gray-300">Stripe Public Key:</label>
                 <input type="text" id="stripePublicKey" v-model="form.stripePublicKey" required
@@ -105,35 +108,36 @@
         <!-- Social Media Links -->
         <footer class="mt-12 text-center">
             <h2 class="text-xl font-bold mb-4">Connect with Jyrone Parker</h2>
+            <Adsbygoogle ad-full-width-responsive="true" ad-slot="6833537473" />
             <div class="flex justify-center space-x-4">
                 <a href="https://jyroneparker.com" target="_blank" class="text-white hover:text-blue-400">
-                    <Icon name="mdi:earth"  />
+                    <Icon name="mdi:earth" />
                 </a>
                 <a href="https://twitter.com/jyroneparker" target="_blank" class="text-white hover:text-blue-400">
-                    <Icon name="mdi:twitter"  />
+                    <Icon name="mdi:twitter" />
                 </a>
                 <a href="https://instagram.com/mastashake08" target="_blank" class="text-white hover:text-pink-500">
-                    <Icon name="mdi:instagram"  />
+                    <Icon name="mdi:instagram" />
                 </a>
                 <a href="https://github.com/mastashake08" target="_blank" class="text-white hover:text-gray-400">
-                    <Icon name="mdi:github"  />
+                    <Icon name="mdi:github" />
                 </a>
                 <a href="https://patreon.com/mastashake08" target="_blank" class="text-white hover:text-red-400">
-                    <Icon name="mdi:patreon"  />
+                    <Icon name="mdi:patreon" />
                 </a>
                 <a href="https://linkedin.com/in/jyroneparker" target="_blank" class="text-white hover:text-blue-600">
-                    <Icon name="mdi:linkedin"  />
+                    <Icon name="mdi:linkedin" />
                 </a>
                 <a href="https://open.spotify.com/artist/1nQuAaO8h98RiBdzfMhlSu" target="_blank"
                     class="text-white hover:text-green-500">
-                    <Icon name="mdi:spotify"  />
+                    <Icon name="mdi:spotify" />
                 </a>
                 <a href="https://music.apple.com/us/artist/mastashake/1520124797" target="_blank"
                     class="text-white hover:text-red-500">
-                    <Icon name="mdi:apple"  />
+                    <Icon name="mdi:apple" />
                 </a>
                 <a href="https://www.youtube.com/c/jyroneparker" target="_blank" class="text-white hover:text-red-600">
-                    <Icon name="mdi:youtube"  />
+                    <Icon name="mdi:youtube" />
                 </a>
             </div>
         </footer>

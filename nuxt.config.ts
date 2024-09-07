@@ -1,19 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  site: { url: 'paidpwa.com' },
+  site: { url: process.env.SITE_NAME },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-jsonld',
     '@nuxtjs/sitemap',
-    '@formkit/auto-animate',
     '@vite-pwa/nuxt',
     '@nuxt/icon',
     '@nuxtjs/google-adsense', 
   ],
   googleAdsense: {
-    id: 'ca-pub-#########'
-  },
-  
+    id: process.env.GOOGLE_ADSENSE_ID,
+    test: process.env.GOOGLE_ADSENSE_TEST_MODE === 'true',
+  }, 
 })
