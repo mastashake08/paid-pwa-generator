@@ -8,6 +8,7 @@ on:
 env:
   PROXY_URL: ${{ secrets.PROXY_URL }}
   STRIPE_KEY: ${{ secrets.STRIPE_KEY }}
+  NUXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
 jobs:
   build:
     runs-on: ubuntu-latest
