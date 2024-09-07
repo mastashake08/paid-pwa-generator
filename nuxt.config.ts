@@ -6,8 +6,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-jsonld',
-    '@nuxtjs/sitemap',
-    '@vite-pwa/nuxt',
+    // '@nuxtjs/sitemap',
+    // '@vite-pwa/nuxt',
     '@nuxt/icon',
     '@nuxtjs/google-adsense', 
   ],
