@@ -2,7 +2,7 @@
     <div class="container mx-auto p-8 bg-gray-900 text-white min-h-screen">
         <h1 class="text-3xl font-extrabold text-center mb-6">Paid PWA Component Generator</h1>
 
-        <Adsbygoogle ad-full-width-responsive="true" ad-slot="6833537473" />
+        <Adsbygoogle :ad-full-width-responsive="true" ad-slot="6833537473" />
         <!-- SEO-optimized Aside -->
         <aside class="mb-8 p-4 bg-gray-800 border-l-4 border-blue-500 rounded text-gray-200 shadow-md">
             <p>
@@ -108,7 +108,7 @@
         <!-- Social Media Links -->
         <footer class="mt-12 text-center">
             <h2 class="text-xl font-bold mb-4">Connect with Jyrone Parker</h2>
-            <Adsbygoogle ad-full-width-responsive="true" ad-slot="6833537473" />
+            <Adsbygoogle :ad-full-width-responsive="true" ad-slot="6833537473" />
             <div class="flex justify-center space-x-4">
                 <a href="https://jyroneparker.com" target="_blank" class="text-white hover:text-blue-400">
                     <Icon name="mdi:earth" />
@@ -141,13 +141,23 @@
                 </a>
             </div>
         </footer>
+        <ClientOnly>
+            <PaidPwa stripe-public-key="pk_test_vOqDwDXTRiUp8s6NODjI1R1z" :amount=300 currency="usd"
+                :supported-networks="['visa', 'mastercard', 'amex', 'discover']"
+                :supported-types="['CARD', 'TOKENIZED_CARD']"
+                 server-endpoint="" service-worker-url="" />
+        </ClientOnly>
+
     </div>
 </template>
 
 <script>
 import { ref, computed } from 'vue';
-
+import PaidPwa from '@mastashake08/paid-pwa/vue';
 export default {
+    components: {
+        PaidPwa,
+    },
     setup() {
         useJsonld({
             "@context": "https://schema.org",
