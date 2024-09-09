@@ -10,13 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@mastashake08/paid-pwa": "^0.0.5",
+    "@mastashake08/paid-pwa": "0.0.8",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "@formkit/auto-animate": "^0.8.2",
     "@nuxt/icon": "^1.5.1",
     "@nuxtjs/google-adsense": "^3.0.0",
     "@nuxtjs/sitemap": "^6.0.1",

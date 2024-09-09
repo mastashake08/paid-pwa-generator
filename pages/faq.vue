@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue';
 export default {
     setup() {
 
@@ -246,45 +245,7 @@ export default {
                     }
                 ]
             }
-        })
-        const form = ref({
-            stripePublicKey: '',
-            currency: 'usd',
-            amount: '',
-            serverEndpoint: '',
-            serviceWorkerUrl: '',
-            supportedNetworks: 'visa,mastercard,amex,discover',
-            supportedTypes: 'credit,debit',
-        });
-
-        // Computed properties to generate component code dynamically
-        const generatedWebComponent = computed(() => {
-            return `
-<paid-pwa
-  stripe-public-key="${form.value.stripePublicKey}"
-  currency="${form.value.currency}"
-  amount="${form.value.amount}"
-  supported-networks="${form.value.supportedNetworks}"
-  supported-types="${form.value.supportedTypes}"
-  server-endpoint="${form.value.serverEndpoint}"
-  service-worker-url="${form.value.serviceWorkerUrl}">
-</paid-pwa>`;
-        });
-
-        const generatedVueComponent = computed(() => {
-            const supportedNetworksArray = form.value.supportedNetworks.split(',').map((n) => `'${n.trim()}'`);
-            const supportedTypesArray = form.value.supportedTypes.split(',').map((t) => `'${t.trim()}'`);
-            return `
-<PaidPwa
-  stripe-public-key="${form.value.stripePublicKey}"
-  :amount="${form.value.amount}"
-  currency="${form.value.currency}"
-  :supported-networks="[${supportedNetworksArray.join(', ')}]"
-  :supported-types="[${supportedTypesArray.join(', ')}]"
-  server-endpoint="${form.value.serverEndpoint}"
-  service-worker-url="${form.value.serviceWorkerUrl}" />`;
-        });
-        return { form, generatedWebComponent, generatedVueComponent };
+        })   
     },
 };
 </script>

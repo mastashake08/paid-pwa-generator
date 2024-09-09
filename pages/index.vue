@@ -25,13 +25,13 @@
                 <li>
                     <strong>Option 1:</strong> Add the following script tag to your HTML to load the package:
                     <pre class="bg-gray-700 p-4 rounded relative mt-2">
-            <code @click="copyToClipboard('&lt;script type=module src=https://cdn.jsdelivr.net/gh/mastashake08/paid-pwa@main/src/paid-pwa.js&gt;&lt;/script&gt;')" class="cursor-pointer text-green-300 hover:text-green-400">&lt;script type="module" src="https://cdn.jsdelivr.net/gh/mastashake08/paid-pwa@main/src/paid-pwa.js"&gt;&lt;/script&gt;</code>
+            <code @click="copyToClipboard('&lt;script type=module src=https://cdn.jsdelivr.net/gh/mastashake08/paid-pwa@main/src/paid-pwa.js&gt;&lt;/script&gt;')" class="cursor-pointer text-green-300 hover:text-green-400 text-center">&lt;script type="module" src="https://cdn.jsdelivr.net/gh/mastashake08/paid-pwa@main/src/paid-pwa.js"&gt;&lt;/script&gt;</code>
           </pre>
                 </li>
                 <li>
                     <strong>Option 2:</strong> Install via npm by running the following command in your terminal:
                     <pre class="bg-gray-700 p-4 rounded relative mt-2">
-            <code @click="copyToClipboard('npm install @mastashake08/paid-pwa')" class="cursor-pointer text-green-300 hover:text-green-400">npm install @mastashake08/paid-pwa</code>
+            <code @click="copyToClipboard('npm install @mastashake08/paid-pwa')" class="cursor-pointer text-green-300 hover:text-green-400 text-center">npm install @mastashake08/paid-pwa</code>
           </pre>
                 </li>
             </ul>
@@ -62,6 +62,12 @@
             <div>
                 <label for="serverEndpoint" class="block font-medium text-gray-300">Server Endpoint:</label>
                 <input type="text" id="serverEndpoint" v-model="form.serverEndpoint" required
+                    class="w-full p-2 border border-gray-700 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+
+            <div>
+                <label for="googleMerchId" class="block font-medium text-gray-300">Google Pay Merchant ID:</label>
+                <input type="text" id="googleMerchId" v-model="form.googleMerchId" required
                     class="w-full p-2 border border-gray-700 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
@@ -143,9 +149,9 @@
         </footer>
         <ClientOnly>
             <PaidPwa stripe-public-key="pk_test_vOqDwDXTRiUp8s6NODjI1R1z" :amount=300 currency="usd"
-                :supported-networks="['visa', 'mastercard', 'amex', 'discover']"
-                :supported-types="['CARD', 'TOKENIZED_CARD']"
-                 server-endpoint="" service-worker-url="" />
+                :supported-networks="['visa', 'mastercard', 'amex', 'discover']" :supported-types="['CARD']"
+                server-endpoint="" service-worker-url="" apple-merchant-id="merchant.com.bestbudz"
+                google-merchant-id="BCR2DN4T6OI6TCIY" google-merchant-name="Jyrone Parker" />
         </ClientOnly>
 
     </div>
@@ -345,6 +351,7 @@ export default {
             serviceWorkerUrl: '',
             supportedNetworks: 'visa,mastercard,amex,discover',
             supportedTypes: 'credit,debit',
+            googleMerchId: 'test'
         });
 
         const generatedWebComponent = computed(() => {
@@ -356,7 +363,8 @@ export default {
   supported-networks="${form.value.supportedNetworks}"
   supported-types="${form.value.supportedTypes}"
   server-endpoint="${form.value.serverEndpoint}"
-  service-worker-url="${form.value.serviceWorkerUrl}">
+  service-worker-url="${form.value.serviceWorkerUrl}"
+  google-merchant-id="${form.value.googleMerchId}">
 </paid-pwa>`;
         });
 
@@ -371,7 +379,8 @@ export default {
   :supported-networks="[${supportedNetworksArray.join(', ')}]"
   :supported-types="[${supportedTypesArray.join(', ')}]"
   server-endpoint="${form.value.serverEndpoint}"
-  service-worker-url="${form.value.serviceWorkerUrl}" />`;
+  service-worker-url="${form.value.serviceWorkerUrl}"
+  google-merchant-id="${form.value.googleMerchId}"/>`;
         });
 
         const copyToClipboard = (text) => {
