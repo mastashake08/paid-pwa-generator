@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "paid-pwa-generator",
   "private": true,
   "type": "module",
   "scripts": {
