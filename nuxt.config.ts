@@ -3,6 +3,17 @@ export default defineNuxtConfig({
   ssr: false,
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  vite: {
+    server: {
+        proxy: {
+            '/api': {
+                target: process.env.PROXY_URL,
+                changeOrigin: true,
+                rewrite: path => path.replace(/^\/api/, '')
+          }
+      }
+    },
+},
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-jsonld',
