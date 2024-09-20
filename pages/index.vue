@@ -149,7 +149,7 @@
         </footer>
         <ClientOnly>
             <PaidPwa stripe-public-key="pk_test_vOqDwDXTRiUp8s6NODjI1R1z" :amount=300 currency="usd"
-                server-endpoint="http://localhost/api/create-intent" service-worker-url="" apple-merchant-id="merchant.com.bestbudz"
+                server-endpoint="https://pwa-generator.jyroneparker.com/api/create-intent" service-worker-url="" apple-merchant-id="merchant.com.bestbudz"
                 google-merchant-id="BCR2DN4T6OI6TCIY" google-merchant-name="Jyrone Parker" />
         </ClientOnly>
 
