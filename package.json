@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@mastashake08/paid-pwa": "0.0.9",
+    "@mastashake08/paid-pwa": "0.1.0",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
