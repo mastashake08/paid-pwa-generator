@@ -149,7 +149,6 @@
         </footer>
         <ClientOnly>
             <PaidPwa stripe-public-key="pk_test_vOqDwDXTRiUp8s6NODjI1R1z" :amount=300 currency="usd"
-                :supported-networks="['visa', 'mastercard', 'amex', 'discover']" :supported-types="['CARD']"
                 server-endpoint="" service-worker-url="" apple-merchant-id="merchant.com.bestbudz"
                 google-merchant-id="BCR2DN4T6OI6TCIY" google-merchant-name="Jyrone Parker" />
         </ClientOnly>
