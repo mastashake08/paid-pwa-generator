@@ -1,0 +1,20 @@
+version: '4.2'
+services:
+  paid-pwa-app.local:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mastashake08/paid-pwa-frontend:latest
+    ports:
+      - "80:80"
+    environment:
+      NODE_ENV: production
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - paid-pwa-network
+
+networks:
+  paid-pwa-network:
+    driver: bridge
