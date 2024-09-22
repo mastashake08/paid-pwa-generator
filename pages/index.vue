@@ -66,30 +66,12 @@
             </div>
 
             <div>
-                <label for="googleMerchId" class="block font-medium text-gray-300">Google Pay Merchant ID:</label>
-                <input type="text" id="googleMerchId" v-model="form.googleMerchId" required
-                    class="w-full p-2 border border-gray-700 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            </div>
-
-            <div>
                 <label for="serviceWorkerUrl" class="block font-medium text-gray-300">Service Worker URL:</label>
                 <input type="text" id="serviceWorkerUrl" v-model="form.serviceWorkerUrl" required
                     class="w-full p-2 border border-gray-700 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
-            <div>
-                <label for="supportedNetworks" class="block font-medium text-gray-300">Supported Networks (comma
-                    separated):</label>
-                <input type="text" id="supportedNetworks" v-model="form.supportedNetworks"
-                    class="w-full p-2 border border-gray-700 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            </div>
-
-            <div>
-                <label for="supportedTypes" class="block font-medium text-gray-300">Supported Types (comma
-                    separated):</label>
-                <input type="text" id="supportedTypes" v-model="form.supportedTypes"
-                    class="w-full p-2 border border-gray-700 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            </div>
+          
         </form>
 
         <!-- Side-by-Side Output -->
@@ -149,8 +131,7 @@
         </footer>
         <ClientOnly>
             <PaidPwa stripe-public-key="pk_test_vOqDwDXTRiUp8s6NODjI1R1z" :amount=300 currency="usd"
-                server-endpoint="https://pwa-generator.jyroneparker.com/api/create-intent" service-worker-url="" apple-merchant-id="merchant.com.bestbudz"
-                google-merchant-id="BCR2DN4T6OI6TCIY" google-merchant-name="Jyrone Parker" />
+                server-endpoint="https://pwa-generator.jyroneparker.com/api/create-intent" service-worker-url="" />
         </ClientOnly>
 
     </div>
@@ -359,11 +340,8 @@ export default {
   stripe-public-key="${form.value.stripePublicKey}"
   currency="${form.value.currency}"
   amount="${form.value.amount}"
-  supported-networks="${form.value.supportedNetworks}"
-  supported-types="${form.value.supportedTypes}"
   server-endpoint="${form.value.serverEndpoint}"
-  service-worker-url="${form.value.serviceWorkerUrl}"
-  google-merchant-id="${form.value.googleMerchId}">
+  service-worker-url="${form.value.serviceWorkerUrl}">
 </paid-pwa>`;
         });
 
@@ -375,11 +353,8 @@ export default {
   stripe-public-key="${form.value.stripePublicKey}"
   :amount="${form.value.amount}"
   currency="${form.value.currency}"
-  :supported-networks="[${supportedNetworksArray.join(', ')}]"
-  :supported-types="[${supportedTypesArray.join(', ')}]"
   server-endpoint="${form.value.serverEndpoint}"
-  service-worker-url="${form.value.serviceWorkerUrl}"
-  google-merchant-id="${form.value.googleMerchId}"/>`;
+  service-worker-url="${form.value.serviceWorkerUrl}"/>`;
         });
 
         const copyToClipboard = (text) => {
